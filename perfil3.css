@@ -12,7 +12,6 @@ body {
   to { opacity: 1; transform: translateY(0); }
 }
 
-/* ===== HEADER ===== */
 header {
   width: 100%;
   padding: 15px 0;
@@ -37,7 +36,7 @@ header .titulo {
 
 .perfil1-container {
   text-align: center;
-  padding: 80px 20px;
+  padding: 100px 20px 60px;
 }
 
 h1 {
@@ -54,6 +53,7 @@ h1 {
 
 table {
   margin: 0 auto;
+  border-spacing: 15px;
 }
 
 td {
@@ -82,7 +82,6 @@ a:hover {
   text-decoration: underline;
 }
 
-/* Botão Voltar */
 .voltar-link {
   position: absolute;
   top: 20px;
@@ -98,4 +97,81 @@ a:hover {
   backdrop-filter: blur(5px);
 }
 
+.voltar-link:hover {
+  background: rgba(155, 93, 229, 0.4);
+  text-shadow: 0 0 10px rgba(155, 93, 229, 0.8);
+}
 
+/* ===== RESPONSIVIDADE ===== */
+@media (max-width: 768px) {
+  header .titulo {
+    font-size: 22px;
+  }
+
+  .voltar-link {
+    font-size: 14px;
+    padding: 6px 12px;
+    top: 15px;
+    left: 15px;
+  }
+
+  h1 {
+    font-size: 24px;
+  }
+
+  .categoria h2 {
+    font-size: 20px;
+  }
+
+  img {
+    width: 120px;
+    height: 160px;
+  }
+
+  td {
+    padding: 10px;
+  }
+}
+
+@media (max-width: 480px) {
+  header {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  .voltar-link {
+    position: static;
+    margin-top: 5px;
+  }
+
+  header .titulo {
+    font-size: 20px;
+    margin-bottom: 5px;
+  }
+
+  .perfil1-container {
+    padding: 90px 10px 40px;
+  }
+
+  h1 {
+    font-size: 22px;
+  }
+
+  .categoria h2 {
+    font-size: 18px;
+  }
+
+  img {
+    width: 100px;
+    height: 140px;
+  }
+
+  table, td {
+    display: block;
+    width: 100%;
+  }
+
+  td {
+    padding: 10px 0;
+  }
+}

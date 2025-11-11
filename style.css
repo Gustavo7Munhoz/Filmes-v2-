@@ -7,24 +7,33 @@
 
 body {
   background: linear-gradient(135deg, #0b0b0f, #1a103d);
-  height: 100vh;
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   color: #fff;
+  overflow-x: hidden;
+  animation: fadeIn 0.8s ease-in-out;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
 }
 
 .perfil-container {
   width: 100%;
   max-width: 700px;
   text-align: center;
+  padding: 20px;
 }
 
 h1 {
   font-size: 32px;
   margin-bottom: 40px;
   color: #cbb2ff;
+  text-shadow: 0 0 15px rgba(203, 178, 255, 0.6);
 }
 
 .perfil-grid {
@@ -45,6 +54,7 @@ h1 {
   box-shadow: 0 0 20px rgba(130, 60, 255, 0.2);
   text-align: center;
   text-decoration: none;
+  background: rgba(25, 10, 50, 0.7);
 }
 
 .perfil-card img {
@@ -53,6 +63,7 @@ h1 {
   object-fit: cover;
   border-bottom: 1px solid rgba(130, 60, 255, 0.2);
   display: block;
+  transition: transform 0.3s ease;
 }
 
 .perfil-card span {
@@ -68,6 +79,10 @@ h1 {
   box-shadow: 0 0 40px rgba(150, 80, 255, 0.6);
 }
 
+.perfil-card:hover img {
+  transform: scale(1.05);
+}
+
 .add-perfil {
   display: flex;
   flex-direction: column;
@@ -75,10 +90,67 @@ h1 {
   align-items: center;
   height: 250px;
   background: rgba(20, 10, 40, 0.85);
+  border-radius: 16px;
+  border: 2px dashed rgba(130, 60, 255, 0.4);
+  color: #cbb2ff;
+  transition: 0.3s;
 }
 
 .add-perfil .plus {
   font-size: 50px;
   color: #b987ff;
   margin-bottom: 10px;
+}
+
+.add-perfil:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 0 25px rgba(180, 100, 255, 0.5);
+  border-color: rgba(180, 100, 255, 0.8);
+}
+
+
+@media (max-width: 768px) {
+  h1 {
+    font-size: 26px;
+    margin-bottom: 30px;
+  }
+
+  .perfil-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 25px;
+  }
+
+  .perfil-card {
+    width: 150px;
+    height: 220px;
+  }
+
+  .perfil-card img {
+    height: 160px;
+  }
+}
+
+/* Celulares */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 22px;
+  }
+
+  .perfil-grid {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .perfil-card {
+    width: 80%;
+    height: 240px;
+  }
+
+  .perfil-card img {
+    height: 180px;
+  }
+
+  .add-perfil {
+    width: 80%;
+  }
 }
